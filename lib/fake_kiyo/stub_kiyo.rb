@@ -8,15 +8,15 @@ module FakeKiyo
     def self.boot(port = FakeKiyo::Utils.find_available_port)
       instance = new
       Capybara.server = :webrick
-      Capybara::Server.new(instance, port: port).tap { |server| server.boot }
+      Capybara::Server.new(instance, port: port).tap(&:boot)
     end
 
     def self.boot_once
-      @@kiyo_server ||= FakeKiyo::StubKiyo.boot(self.server_port)
+      @boot_once ||= FakeKiyo::StubKiyo.boot(server_port)
     end
 
     def self.server_port
-      @@kiyo_port ||= FakeKiyo::Utils.find_available_port
+      @server_port ||= FakeKiyo::Utils.find_available_port
     end
   end
 end

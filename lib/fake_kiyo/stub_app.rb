@@ -2,7 +2,6 @@ require 'sinatra/base'
 
 module FakeKiyo
   class StubApp < Sinatra::Base
-
     post '/api/images/closed_questions' do
       json_response 201, fixture('create_image_closed_question')
     end
