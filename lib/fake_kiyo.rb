@@ -8,6 +8,6 @@ module FakeKiyo
 
   def self.stub_kiyo
     FakeKiyo::StubKiyo.boot_once
-    stub_request(:any, /datawow.io/).to_rack(FakeKiyo::StubApp)
+    stub_request(:any, /k-sequencing.datawow.io/).to_rack(FakeKiyo::StubApp)
   end
 end
