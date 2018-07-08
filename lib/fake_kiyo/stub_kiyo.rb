@@ -12,11 +12,11 @@ module FakeKiyo
     end
 
     def self.boot_once
-      @@stripe_js_server ||= FakeKiyo::StubKiyo.boot(self.server_port)
+      @@kiyo_server ||= FakeKiyo::StubKiyo.boot(self.server_port)
     end
 
     def self.server_port
-      @@stripe_js_port ||= FakeKiyo::Utils.find_available_port
+      @@kiyo_port ||= FakeKiyo::Utils.find_available_port
     end
   end
 end
