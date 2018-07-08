@@ -8,7 +8,7 @@ module FakeKiyo
     def self.boot(port = FakeKiyo::Utils.find_available_port)
       instance = new
       Capybara.server = :webrick
-      Capybara::Server.new(instance, port).tap { |server| server.boot }
+      Capybara::Server.new(instance, port: port).tap { |server| server.boot }
     end
 
     def self.boot_once
