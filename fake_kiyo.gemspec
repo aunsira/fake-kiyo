@@ -7,6 +7,7 @@ Gem::Specification.new do |s|
   s.version     = FakeKiyo::VERSION
   s.authors     = ['Sira Sarakit']
   s.email       = ['aun.sira@gmail.com']
+  s.summary     = 'A fake Kiyo server.'
 
   s.files = Dir["{lib}/**/*"] + ['Rakefile', 'README.md']
 
